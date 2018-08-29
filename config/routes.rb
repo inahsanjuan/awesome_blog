@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
 
   get "/signup", to: "users#new"
-  resources :users, only: [:create, :show]
+  resources :users, except: [:new]
 end
