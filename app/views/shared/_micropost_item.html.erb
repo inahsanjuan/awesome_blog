@@ -1,7 +1,16 @@
 <div class="media p-3 border-top">
+    <span class="mr-2"><%= gravatar_for(current_user) %></span>    
+
     <div class="media-body">
         <h4><%= link_to current_user.name, user_path(current_user) %></h4>
         <div><%= micropost.content %></div>
+
+        <% if micropost.picture? %>
+            <div>
+                <%= image_tag micropost.picture.url, class: 'mw-100' %>
+            </div>
+        <% end %>
+
         <small class="text-muted">
             Posted <%= time_ago_in_words(micropost.created_at) %> ago
         </small>
