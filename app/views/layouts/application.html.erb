@@ -10,14 +10,14 @@
   </head>
 
   <body>
-    <!-- _header.html.erb -->
     <%= render "layouts/header" %>
 
     <div class="container pt-4">
+      <%= render "layouts/flash_messages" %>
+
       <%= yield %>
     </div>
 
-    <!-- _footer.html.erb -->
     <%= render "layouts/footer" %>
   </body>
 </html>
