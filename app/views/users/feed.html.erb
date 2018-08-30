@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= current_user.name %></h1>
+        <%= link_to "View my profile", current_user %>
+
+        <hr>
+
+        <div>
+            <h5>Share your thoughts</h5>
+            <%= render "shared/micropost_form" %>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3>Feed</h3>
+
+        <% current_user.microposts.each do |micropost| %>
+            <%= render "shared/micropost_item", micropost: micropost  %>
+        <% end %>
+    </div>
+</div>

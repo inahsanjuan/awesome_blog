@@ -1,0 +1,17 @@
+<%= form_for(@micropost) do |f| %>
+    <div class="form-group">
+        <%= f.text_area :content, class: 'form-control' %>
+    </div>
+
+    <% if @micropost.errors.any? %>
+        <div class="alert alert-danger">
+            <ul class="m-0">
+                <% @micropost.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= f.submit "Post", class: 'btn btn-success form-control' %>
+<% end %>

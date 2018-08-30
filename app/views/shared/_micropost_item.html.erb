@@ -1,0 +1,9 @@
+<div class="media p-3 border-top">
+    <div class="media-body">
+        <h4><%= link_to current_user.name, user_path(current_user) %></h4>
+        <div><%= micropost.content %></div>
+        <small class="text-muted">
+            Posted <%= time_ago_in_words(micropost.created_at) %> ago
+        </small>
+    </div>
+</div>
