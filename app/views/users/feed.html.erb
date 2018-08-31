@@ -13,7 +13,7 @@
     <div class="col-md-8">
         <h3>Feed</h3>
 
-        <% current_user.microposts.each do |micropost| %>
+        <% @microposts.each do |micropost| %>
             <%= render "shared/micropost_item", micropost: micropost  %>
         <% end %>
     </div>
